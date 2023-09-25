@@ -26,6 +26,7 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@Given("^User Launch The chatbot Application$")
 	public void user_Launch_The_chatbot_Application() throws Throwable {
 		
+		//Launching the url using config reader functionality
 		webSite(FileReaderManager.getInstanceFR().getInstanceCR().getUrl());
 		Thread.sleep(3);
 		clickOk(pom.getChatBotPage().getCookiesAccept());
@@ -36,6 +37,7 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@When("^Once you launch the site and verify if the chat bot is displayed on the screen$")
 	public void once_you_launch_the_site_and_verify_if_the_chat_bot_is_displayed_on_the_screen() throws Throwable {
 	   
+		// verifying the chat bot and displays a message based on icon function
 		waitTime(4);
 		driver.switchTo().frame(pom.getChatBotPage().getIframe());
 		Thread.sleep(3);
@@ -48,7 +50,9 @@ PageObjectManager pom = new PageObjectManager(driver);
 
 	@When("^Click on the bot and verify the welcome message and other text validation$")
 	public void click_on_the_bot_and_verify_the_welcome_message_and_other_text_validation() throws Throwable {
-	    String expected="Hello there";
+	   
+		//validating the welcome message
+		String expected="Hello there";
 		waitTime(4);
 		clickOk(pom.getChatBotPage().getChatIcon());
 		Thread.sleep(3);
@@ -62,29 +66,33 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@When("^Enter invalid data \"([^\"]*)\" and verify error message$")
 	public void enter_invalid_data_and_verify_error_message(String arg1) throws Throwable {
 	   
+		//validating the email with wrong email id
 		waitTime(3);
 		sendValues(pom.getChatBotPage().getEmailTextBox(), arg1);
 		Thread.sleep(2);
 		clickOk(pom.getChatBotPage().getEmailSendButton());
-		
+		//printing the error message
 		textget(pom.getChatBotPage().getErrorMessage());
 		Thread.sleep(2);
-		pom.getChatBotPage().getEmailTextBox().sendKeys(Keys.CONTROL,Keys.chord("a"));
+		pom.getChatBotPage().getEmailTextBox().sendKeys(Keys.CONTROL,Keys.chord("a"));  //clearing the old wrong mail using keyboard actions
 		pom.getChatBotPage().getEmailTextBox().sendKeys(Keys.BACK_SPACE);
 	}
 
 	@When("^then enter valid data \"([^\"]*)\" and continue the conversation$")
 	public void then_enter_valid_data_and_continue_the_conversation(String arg2) throws Throwable {
 		
-	
+		//enters valid email and continue chat
 		waitTime(5);
 		sendValues(pom.getChatBotPage().getEmailTextBox(), arg2);
 		clickOk(pom.getChatBotPage().getEmailSendButton());
 		
+		//printing the second question
 		textget(pom.getChatBotPage().getSecondMessage());
 		Thread.sleep(2);
+		//selecting one option 
 		clickOk(pom.getChatBotPage().getLinkedInOption());
 		
+		//printing the thanks message
 		textget(pom.getChatBotPage().getThanksMessage());
 		
 		}
@@ -93,6 +101,7 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@When("^Restart the conversation$")
 	public void restart_the_conversation() throws Throwable {
 		
+		//clicking restart button
 		waitTime(3);
 		clickOk(pom.getChatBotPage().getResetButton());
 	  
@@ -101,6 +110,7 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@When("^Close and open the chat$")
 	public void close_and_open_the_chat() throws Throwable {
 		
+		//closed the bot and reopened again
 		waitTime(3);
 		clickOk(pom.getChatBotPage().getCloseButton());
 		
@@ -111,6 +121,8 @@ PageObjectManager pom = new PageObjectManager(driver);
 	@When("^Open a new tab with google stay there for (\\d+) seconds$")
 	public void open_a_new_tab_with_google_stay_there_for_seconds(int arg1) throws Throwable {
 			
+		
+		// moved to new tab by using java script executor and opened google site
         openNewTab();
 		webSite(FileReaderManager.getInstanceFR().getInstanceCR().getNewUrl());
 		Thread.sleep(arg1);
@@ -129,11 +141,11 @@ PageObjectManager pom = new PageObjectManager(driver);
 //		
 	}
 
-//	@Then("^close the page$")
-//	public void close_the_page() throws Throwable {
-//		
-//	   closeBrowser();
-//	}
+	@Then("^close the page$")
+	public void close_the_page() throws Throwable {
+		
+	   closeBrowser();
+	}
 
 	}
 
