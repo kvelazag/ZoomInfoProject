@@ -1,0 +1,4 @@
+com\zoominfo\runner\ZoomInfoRunner.class
+com\zoominfo\stepdefinition\ZoomInfoStepDefinition.class
+configuration_reader\org\ConfigurationReader.class
+filereadermanager\org\FileReaderManager.class
