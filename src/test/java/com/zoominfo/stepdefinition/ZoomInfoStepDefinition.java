@@ -118,7 +118,7 @@ PageObjectManager pom = new PageObjectManager(driver);
 	   
 	}
 
-	@When("^Open a new tab with google stay there for (\\d+) seconds$")
+	@When("^Open a new tab with google stay there for (\\d+) milliseconds$")
 	public void open_a_new_tab_with_google_stay_there_for_seconds(int arg1) throws Throwable {
 			
 		
@@ -128,17 +128,13 @@ PageObjectManager pom = new PageObjectManager(driver);
 		Thread.sleep(arg1);
 	  
 	}
-
-	@When("^come back to chat page and enter the data \"([^\"]*)\" in the bot$")
-	public void come_back_to_chat_page_and_enter_the_data_in_the_bot(String arg1) throws Throwable {
+	
+	@When("^come back to chat page and enter the data in the bot$")
+	public void come_back_to_chat_page_and_enter_the_data_in_the_bot() throws Throwable {
 	   
+		//switch back to chatbot page
 		driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
-		waitTime(2);
-		
-//		sendValues(pom.getChatBotPage().getBaseInputTextBox(), arg1);
-//		
-//		clickOk(pom.getChatBotPage().getBaseSendButton());
-//		
+		Thread.sleep(3000);
 	}
 
 	@Then("^close the page$")

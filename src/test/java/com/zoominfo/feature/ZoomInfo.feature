@@ -7,10 +7,10 @@ And Enter invalid data "<wrongEmail>" and verify error message
 And then enter valid data "<correctEmail>" and continue the conversation
 And Restart the conversation
 And Close and open the chat
-And Open a new tab with google stay there for 10 seconds 
-And come back to chat page and enter the data "<newData>" in the bot
+And Open a new tab with google stay there for 10000 milliseconds 
+And come back to chat page and enter the data in the bot
 Then close the page
 
 Examples:
-|wrongEmail|correctEmail|newData|
-|kavi@gmail.com|kavi@telekom.com|kaviyarasu@telekom.com|
+|wrongEmail|correctEmail|
+|kavi@gmail.com|kavi@telekom.com|
