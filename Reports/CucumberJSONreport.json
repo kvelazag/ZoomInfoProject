@@ -1,0 +1,172 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 16,
+        "name": "chatbot validation process",
+        "description": "",
+        "id": "chatbot-validation;chatbot-validation-process;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3416708400,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "User Launch The chatbot Application",
+            "match": {
+              "location": "ZoomInfoStepDefinition.user_Launch_The_chatbot_Application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2153384000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Once you launch the site and verify if the chat bot is displayed on the screen",
+            "match": {
+              "location": "ZoomInfoStepDefinition.once_you_launch_the_site_and_verify_if_the_chat_bot_is_displayed_on_the_screen()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2309007900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Click on the bot and verify the welcome message and other text validation",
+            "match": {
+              "location": "ZoomInfoStepDefinition.click_on_the_bot_and_verify_the_welcome_message_and_other_text_validation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2572200900,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Enter invalid data \"kavi@gmail.com\" and verify error message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "kavi@gmail.com",
+                  "offset": 20
+                }
+              ],
+              "location": "ZoomInfoStepDefinition.enter_invalid_data_and_verify_error_message(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6363222400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "then enter valid data \"kavi@telekom.com\" and continue the conversation",
+            "match": {
+              "arguments": [
+                {
+                  "val": "kavi@telekom.com",
+                  "offset": 23
+                }
+              ],
+              "location": "ZoomInfoStepDefinition.then_enter_valid_data_and_continue_the_conversation(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 141330100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Restart the conversation",
+            "match": {
+              "location": "ZoomInfoStepDefinition.restart_the_conversation()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 254243200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Close and open the chat",
+            "match": {
+              "location": "ZoomInfoStepDefinition.close_and_open_the_chat()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3841751500,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "Open a new tab with google stay there for 10 seconds",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 42
+                }
+              ],
+              "location": "ZoomInfoStepDefinition.open_a_new_tab_with_google_stay_there_for_seconds(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33830600,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "come back to chat page and enter the data \"kaviyarasu@telekom.com\" in the bot",
+            "match": {
+              "arguments": [
+                {
+                  "val": "kaviyarasu@telekom.com",
+                  "offset": 43
+                }
+              ],
+              "location": "ZoomInfoStepDefinition.come_back_to_chat_page_and_enter_the_data_in_the_bot(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "close the page",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Chatbot validation",
+    "description": "",
+    "id": "chatbot-validation",
+    "keyword": "Feature",
+    "uri": "ZoomInfo.feature"
+  }
+]
